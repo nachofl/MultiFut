@@ -1,0 +1,3 @@
+detekt {
+    source.setFrom(files("src"))
+}

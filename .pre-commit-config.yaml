@@ -1,0 +1,6 @@
+repos:
+-   repo: https://github.com/pre-commit/mirrors-ktlint
+    rev: v0.48.2  # Use the latest stable release
+    hooks:
+    - id: ktlint
+      args: ["--android"]

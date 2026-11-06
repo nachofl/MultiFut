@@ -1,17 +1,26 @@
-*.iml
+# Gradle files
 .gradle
-.idea
-.DS_Store
 build
-captures
-.externalNativeBuild
-.cxx
+
+# Local configuration files
 local.properties
-xcuserdata
-/.kotlin/metadata/kotlinTransformedMetadataLibraries/org.jetbrains.kotlinx-kotlinx-serialization-json-1.6.3-commonMain-JDnEfA.klib
-/.kotlin/metadata/kotlinTransformedMetadataLibraries/org.jetbrains.kotlinx-kotlinx-serialization-json-1.6.3-nativeMain-JDnEfA.klib
-/.kotlin/metadata/kotlinTransformedMetadataLibraries/org.jetbrains.kotlinx-kotlinx-serialization-core-1.6.3-nativeMain-oyg_tw.klib
-/.kotlin/metadata/kotlinTransformedMetadataLibraries/org.jetbrains.kotlinx-kotlinx-serialization-core-1.6.3-commonMain-oyg_tw.klib
-/.kotlin/metadata/kotlinTransformedMetadataLibraries/org.jetbrains.kotlin-kotlin-test-2.0.0-assertionsCommonMain-24eTFQ.klib
-/.kotlin/metadata/kotlinTransformedMetadataLibraries/org.jetbrains.kotlin-kotlin-test-2.0.0-annotationsCommonMain-24eTFQ.klib
-/.kotlin/metadata/kotlinTransformedMetadataLibraries/org.jetbrains.kotlin-kotlin-stdlib-2.0.0-commonMain-2bbUHA.klib
+
+# Android Studio generated files
+.idea
+*.iml
+
+# Gradle wrapper
+gradle/wrapper/gradle-wrapper.jar
+
+# Kotlin generated files
+**/build/generated
+
+# Firebase files
+**/google-services.json
+**/GoogleService-Info.plist
+
+# Logs
+*.log
+
+# Other
+*.tmp

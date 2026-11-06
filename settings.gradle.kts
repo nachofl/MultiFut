@@ -1,19 +1,20 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 pluginManagement {
-    repositories {
-        google()
-        gradlePluginPortal()
-        mavenCentral()
-    }
+	repositories {
+		google()
+		gradlePluginPortal()
+		mavenCentral()
+	}
 }
 
 dependencyResolutionManagement {
-    repositories {
-        google()
-        mavenCentral()
-    }
+	repositories {
+		google()
+		mavenCentral()
+	}
 }
 
 rootProject.name = "MultiFut"
-include(":AndroidFutApp")
+include(":AndroidApp")
 include(":shared")
+include(":shared-ui")

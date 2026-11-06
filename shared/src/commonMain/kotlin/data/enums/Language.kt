@@ -1,16 +1,22 @@
 package data.enums
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 enum class Language(val code: String, val displayName: String) {
-	ENGLISH("en", "English"),
-	SPANISH("es", "Español"),
-	GALICIAN("gl", "Galego");
+	@SerialName("en")
+	ENGLISH("en", "english"),
+
+	@SerialName("es")
+	SPANISH("es", "spanish"),
+
+	@SerialName("gl")
+	GALICIAN("gl", "galician");
 
 	companion object {
-		fun fromCode(code: String): Language? {
-			return values().find { it.code == code }
-		}
+		private val BY_CODE: Map<String, Language> = values().associateBy { it.code }
+
+		fun fromCode(code: String): Language? = BY_CODE[code]
 	}
 }

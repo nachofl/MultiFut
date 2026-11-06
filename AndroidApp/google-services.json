@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "293688566189",
+    "project_id": "multifut-ifl",
+    "storage_bucket": "multifut-ifl.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:293688566189:android:28859a0bbfe7fc9a800124",
+        "android_client_info": {
+          "package_name": "com.multifut.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "293688566189-1uq0u0u3oi4tsegiqaelp0dc7qkqbfn9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAWR6EJhTQryyyzYPvdJMVROyW4xQCogQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "293688566189-1uq0u0u3oi4tsegiqaelp0dc7qkqbfn9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

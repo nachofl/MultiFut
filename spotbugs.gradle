@@ -1,0 +1,4 @@
+spotbugs {
+    effort = "max"
+    reportLevel = "high"
+}

@@ -1,0 +1,23 @@
+# EditorConfig helps developers maintain consistent coding styles between different editors and IDEs
+
+root = true
+
+# Global settings
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Kotlin files
+[*.kt]
+max_line_length = 120
+
+# Gradle files
+[*.gradle.kts]
+max_line_length = 120
+
+# XML files
+[*.xml]
+max_line_length = 120

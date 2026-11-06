@@ -3,21 +3,42 @@ package data.entities
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Match(
-    val id: String,
-    val homeTeamId: Long,
-    var homeGoals: Int? = null,
-    val awayTeamId: Long?,
-    var awayGoals: Int? = null,
-    var actaFilled: Boolean = false,
-){
-    init{
-        require(homeTeamId != awayTeamId) { "Home team and away team can't be the same" }
-        if (homeGoals != null) {
-            require(homeGoals!! >= 0) { "Home team goals can't be negative" }
-        }
-        if (awayGoals != null) {
-            require(awayGoals!! >= 0) { "Away team goals can't be negative" }
-        }
-    }
+sealed class Match {
+	abstract val id: String
+	abstract val homeTeamId: String
+	abstract val homeGoals: Int?
+	abstract val actaFilled: Boolean
+
+	fun isBye(): Boolean = this is ByeMatch
+
+	fun isPlayed(): Boolean = when (this) {
+		is NormalMatch -> homeGoals != null && awayGoals != null
+		is ByeMatch -> false
+	}
+
+	fun isDraw(): Boolean = when (this) {
+		is NormalMatch -> isPlayed() && homeGoals == awayGoals
+		is ByeMatch -> false
+	}
+
+	fun winnerTeamId(): String? {
+		return when (this) {
+			is NormalMatch -> {
+				if (!isPlayed()) return null
+				when {
+					homeGoals!! > awayGoals!! -> homeTeamId
+					homeGoals!! < awayGoals -> awayTeamId
+					else -> null
+				}
+			}
+
+			is ByeMatch -> null
+		}
+	}
+
+	fun scoreString(): String = when (this) {
+		is NormalMatch -> "${homeGoals?.toString() ?: "-"} - ${awayGoals?.toString() ?: "-"}"
+		is ByeMatch -> "${homeGoals?.toString() ?: "-"} - -"
+	}
 }
+
